@@ -1,0 +1,52 @@
+# Python
+# ---------------------------------
+# Virtual Environments
+venv/
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+# Node.js / React / Vite
+# ---------------------------------
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# Secrets & Environment Variables
+# ---------------------------------
+# Never commit your secrets!
+.env
+.env.local
+.env.*.local
+
+
+# Operating System & IDE Files
+# ---------------------------------
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# JetBrains IDEs (PyCharm, WebStorm)
+.idea/

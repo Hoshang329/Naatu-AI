@@ -1,0 +1,41 @@
+.particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0; /* Ensures it's in the background */
+}
+
+.particle {
+  position: absolute;
+  background-color: rgba(211, 180, 140, 0.4); /* Light brown, semi-transparent particle color */
+  border-radius: 50%;
+
+  /* Use the custom properties from the component */
+  width: var(--size);
+  height: var(--size);
+  left: var(--left);
+  top: var(--top);
+
+  /* Set up the animation */
+  animation-name: float-up;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: var(--delay);
+  animation-duration: var(--duration);
+}
+
+/* The animation keyframes */
+@keyframes float-up {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    /* Move particle up by 100 vertical height units + 20px offscreen */
+    transform: translateY(calc(-100vh - 20px));
+    opacity: 0;
+  }
+}
