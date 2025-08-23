@@ -50,7 +50,7 @@ function ChatWindow() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://127.0.0.1:5000/ask', {
+      const response = await axios.post('api/ask', {
         question: textToSend,
       });
       const aiMessage = { sender: 'ai', text: response.data.answer };
