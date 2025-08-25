@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 # Flask for creating the web app
 from flask import Flask, request, jsonify
-
+from flask_cors import CORS
 # LangChain components
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -24,6 +24,7 @@ if "GOOGLE_API_KEY" not in os.environ:
 
 # Initialize Flask app and CORS
 app = Flask(__name__)
+CORS(app)
  # This allows our frontend to communicate with this backend
 
 # --- 2. DEFINE CONSTANTS ---
@@ -108,7 +109,7 @@ def ask_question():
 
 # --- 6. RUN THE FLASK APP ---
 
-#if __name__ == "__main__":
+if __name__ == "__main__":
     # Note: We no longer build the database here. We just run the app.
     # The database should be built once using the previous script.
-    #app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
